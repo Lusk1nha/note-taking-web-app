@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import IconTag from "../icons/icon-tag";
 import { cn } from "@/lib/utils";
@@ -5,12 +7,13 @@ import { useSearchParams } from "next/navigation";
 import IconChevronRight from "../icons/icon-chevron-right";
 
 interface ISearchTagButtonProps {
+  variant: "desktop" | "mobile";
   className?: string;
   tag: string;
 }
 
 export function SearchTagButton(props: Readonly<ISearchTagButtonProps>) {
-  const { className, tag } = props;
+  const { variant, className, tag } = props;
 
   const searchParams = useSearchParams();
   const query = searchParams.get("tag");
@@ -29,7 +32,10 @@ export function SearchTagButton(props: Readonly<ISearchTagButtonProps>) {
           "w-full h-10 flex items-center justify-between px-3 rounded-8 gap-x-100 overflow-hidden",
           isActive
             ? "bg-appNeutral text-appTextPrimary"
-            : "text-appTextNeutral hover:bg-appNeutral hover:text-appTextPrimary",
+            : "text-appTextNeutral",
+          variant === "desktop"
+            ? "px-3 hover:bg-appNeutral hover:text-appTextPrimary"
+            : "px-0 text-appTextPrimary",
           className
         )}
         type="button"

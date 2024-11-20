@@ -8,13 +8,13 @@ export default function Dashboard({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="bg-appBackground w-full h-screen relative flex">
+    <div className="bg-appBackground w-full h-screen relative flex pb-14 md:pb-[74px] lg:pb-0">
       <Sidebar />
 
-      <div className="w-full h-full">
-        <div className="flex lg:hidden z-0">
+      <div className="w-full min-h-full flex flex-col flex-1">
+        <header className="flex lg:hidden z-0">
           <MobileLogoTop />
-        </div>
+        </header>
 
         {children}
       </div>

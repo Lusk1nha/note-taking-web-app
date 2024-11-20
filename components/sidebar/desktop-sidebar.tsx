@@ -15,7 +15,13 @@ export function DesktopSidebar() {
         <PathButtonRender />
 
         <div className="w-full flex flex-col border-t border-border gap-y-100">
-          <TagButtonRender label="Tags" />
+          <section>
+            <h4 className="font-medium text-appTextTertiary text-sm p-100">
+              Tags
+            </h4>
+
+            <TagButtonRender />
+          </section>
         </div>
       </nav>
     </aside>

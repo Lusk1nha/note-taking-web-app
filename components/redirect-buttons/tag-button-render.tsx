@@ -4,13 +4,16 @@ import { MockupHelper } from "@/shared/helpers/mockup-helper";
 import { faker } from "@faker-js/faker";
 import { useEffect, useMemo, useState } from "react";
 import { SearchTagButton } from "../buttons/search-tag-button";
+import { cn } from "@/lib/utils";
 
-interface ISearchTagButtonProps {
-  label: string;
+export type Variant = "desktop" | "mobile";
+interface ITagButtonRenderProps {
+  variant?: Variant;
+  className?: string;
 }
 
-export function TagButtonRender(props: Readonly<ISearchTagButtonProps>) {
-  const { label } = props;
+export function TagButtonRender(props: Readonly<ITagButtonRenderProps>) {
+  const { variant = "desktop", className } = props;
 
   const [isMounted, setIsMounted] = useState(false);
 
@@ -32,18 +35,23 @@ export function TagButtonRender(props: Readonly<ISearchTagButtonProps>) {
   }
 
   return (
-    <section>
-      <h4 className="font-medium text-appTextTertiary text-sm p-100">
-        {label}
-      </h4>
-
-      <ul className="max-h-[565px] w-full flex flex-col gap-y-50 overflow-auto">
-        {tags.map((tag) => (
-          <li key={tag} className="w-full">
-            <SearchTagButton tag={tag} />
-          </li>
-        ))}
-      </ul>
-    </section>
+    <ul
+      className={cn(
+        "max-h-[565px] w-full flex flex-col gap-y-50 overflow-auto",
+        className
+      )}
+    >
+      {tags.map((tag) => (
+        <li
+          key={tag}
+          className={cn(
+            "w-full",
+            variant === "mobile" && "border-b border-border last:border-none"
+          )}
+        >
+          <SearchTagButton variant={variant} tag={tag} />
+        </li>
+      ))}
+    </ul>
   );
 }
