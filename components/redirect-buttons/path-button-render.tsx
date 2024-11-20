@@ -2,7 +2,7 @@
 
 import { ROUTES } from "@/app/routes";
 import { useMemo } from "react";
-import { PathButton } from "./buttons/path-button";
+import { MobilePathButton, PathButton } from "../buttons/path-button";
 
 export function PathButtonRender() {
   const paths = useMemo(() => {
@@ -24,5 +24,28 @@ export function PathButtonRender() {
         />
       ))}
     </div>
+  );
+}
+
+export function MobilePathButtonRender() {
+  const paths = useMemo(() => {
+    const mobilePaths = ROUTES.filter(
+      (route) => route.type === "both" || route.type === "mobile"
+    );
+
+    return mobilePaths;
+  }, [ROUTES]);
+
+  return (
+    <>
+      {paths.map((route) => (
+        <MobilePathButton
+          key={route.path}
+          href={route.path}
+          label={route.name}
+          icon={route.icon}
+        />
+      ))}
+    </>
   );
 }

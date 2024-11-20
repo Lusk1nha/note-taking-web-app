@@ -72,6 +72,7 @@ const config: Config = {
         appBackground: "hsl(var(--app-background))",
         appForeground: "hsl(var(--app-foreground))",
         appPrimary: "hsl(var(--app-primary))",
+        appPrimaryTranslucent: "hsl(var(--app-primary-translucent))",
         appNeutral: "hsl(var(--app-neutral))",
         appTextPrimary: "hsl(var(--app-text-primary))",
         appTextSecondary: "hsl(var(--app-text-secondary))",

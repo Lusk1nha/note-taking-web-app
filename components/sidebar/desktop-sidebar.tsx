@@ -1,8 +1,8 @@
-import { TagButtonRender } from "../tag-button-render";
+import { TagButtonRender } from "../redirect-buttons/tag-button-render";
 
-import { RedirectLogo } from "../redirect-logo";
+import { RedirectLogo } from "../redirect-buttons/redirect-logo";
 import { PathEnum } from "@/shared/enums/path-enum";
-import { PathButtonRender } from "../path-button-render";
+import { PathButtonRender } from "../redirect-buttons/path-button-render";
 
 export function DesktopSidebar() {
   return (

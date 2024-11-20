@@ -32,6 +32,7 @@
     --app-background: 0 0% 100%;
     --app-foreground: 222 32% 8%;
     --app-primary: 228 100% 60%;
+    --app-primary-translucent: 222 100% 96%;
     --app-neutral: 216 26% 96%;
     --app-text-primary: 222 32% 8%;
     --app-text-secondary: 221 16% 20%;
@@ -96,6 +97,7 @@
     --app-background: 222 32% 8%;
     --app-foreground: 0 0% 100%;
     --app-primary: 228 100% 60%;
+    --app-primary-translucent: 221 16% 20%;
     --app-neutral: 231 16% 16%;
     --app-text-primary: 0 0% 100%;
     --app-text-secondary: 219 15% 82%;

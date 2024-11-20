@@ -5,7 +5,7 @@ export default function Home() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="w-ful">
+    <div className="w-full">
       <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
         theme
       </button>

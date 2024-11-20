@@ -3,7 +3,7 @@
 import { MockupHelper } from "@/shared/helpers/mockup-helper";
 import { faker } from "@faker-js/faker";
 import { useEffect, useMemo, useState } from "react";
-import { SearchTagButton } from "./buttons/search-tag-button";
+import { SearchTagButton } from "../buttons/search-tag-button";
 
 interface ISearchTagButtonProps {
   label: string;
