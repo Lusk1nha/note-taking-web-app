@@ -12,9 +12,9 @@ export default function Dashboard({
       <Sidebar />
 
       <div className="w-full min-h-full flex flex-col flex-1">
-        <header className="flex lg:hidden z-0">
+        <div className="flex lg:hidden z-0">
           <MobileLogoTop />
-        </header>
+        </div>
 
         {children}
       </div>

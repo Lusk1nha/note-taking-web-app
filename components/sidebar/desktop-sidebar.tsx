@@ -1,8 +1,11 @@
+"use client";
+
 import { TagButtonRender } from "../redirect-buttons/tag-button-render";
 
 import { RedirectLogo } from "../redirect-buttons/redirect-logo";
 import { PathEnum } from "@/shared/enums/path-enum";
 import { PathButtonRender } from "../redirect-buttons/path-button-render";
+import { ROUTES } from "@/app/routes";
 
 export function DesktopSidebar() {
   return (
@@ -12,7 +15,7 @@ export function DesktopSidebar() {
       </div>
 
       <nav className="w-full h-full flex flex-col flex-1 gap-y-2 px-4">
-        <PathButtonRender />
+        <PathButtonRender routes={ROUTES} />
 
         <div className="w-full flex flex-col border-t border-border gap-y-100">
           <section>

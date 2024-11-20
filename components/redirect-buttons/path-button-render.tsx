@@ -1,17 +1,22 @@
 "use client";
 
-import { ROUTES } from "@/app/routes";
+import { RouteSchema } from "@/app/routes";
 import { useMemo } from "react";
 import { MobilePathButton, PathButton } from "../buttons/path-button";
 
-export function PathButtonRender() {
+interface IPathButtonRenderProps {
+  routes: RouteSchema[];
+}
+
+export function PathButtonRender(props: Readonly<IPathButtonRenderProps>) {
+  const { routes } = props;
   const paths = useMemo(() => {
-    const desktopRoutes = ROUTES.filter(
+    const desktopRoutes = routes.filter(
       (route) => route.type === "both" || route.type === "desktop"
     );
 
     return desktopRoutes;
-  }, [ROUTES]);
+  }, [routes]);
 
   return (
     <div className="w-full flex flex-col gap-y-50">
@@ -27,14 +32,17 @@ export function PathButtonRender() {
   );
 }
 
-export function MobilePathButtonRender() {
+export function MobilePathButtonRender(
+  props: Readonly<IPathButtonRenderProps>
+) {
+  const { routes } = props;
   const paths = useMemo(() => {
-    const mobilePaths = ROUTES.filter(
+    const mobilePaths = routes.filter(
       (route) => route.type === "both" || route.type === "mobile"
     );
 
     return mobilePaths;
-  }, [ROUTES]);
+  }, [routes]);
 
   return (
     <>

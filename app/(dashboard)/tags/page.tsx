@@ -1,16 +1,18 @@
 "use client";
 
 import { FloatingButton } from "@/components/buttons/floating-button";
+import { PageHeader } from "@/components/page-elements/page-header";
+
+import PageWrapper from "@/components/page-elements/page-wrapper";
 
 import { TagButtonRender } from "@/components/redirect-buttons/tag-button-render";
 
 export default function Tags() {
   return (
-    <main className="w-full flex flex-col flex-1 relative p-4 pt-2 gap-200">
-      <h2 className="text-2xl font-bold">Tags</h2>
+    <PageWrapper>
+      <PageHeader title="Tags" />
       <TagButtonRender variant="mobile" />
-
       <FloatingButton onClick={() => console.log("teste")} />
-    </main>
+    </PageWrapper>
   );
 }

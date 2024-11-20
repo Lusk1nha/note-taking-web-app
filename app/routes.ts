@@ -1,7 +1,10 @@
 import IconArchive from "@/components/icons/icon-archive";
+import IconFont from "@/components/icons/icon-font";
 import IconHome from "@/components/icons/icon-home";
+import IconLock from "@/components/icons/icon-lock";
 import IconSearch from "@/components/icons/icon-search";
 import IconSettings from "@/components/icons/icon-settings";
+import IconSun from "@/components/icons/icon-sun";
 import IconTag from "@/components/icons/icon-tag";
 import { PathEnum } from "@/shared/enums/path-enum";
 import {
@@ -11,7 +14,7 @@ import {
   SVGProps,
 } from "react";
 
-interface RouteSchema {
+export interface RouteSchema {
   type: "mobile" | "desktop" | "both";
   name: string;
   fullName: string;
@@ -58,5 +61,29 @@ export const ROUTES: RouteSchema[] = [
     fullName: "App Settings",
     path: PathEnum.Settings,
     icon: IconSettings,
+  },
+];
+
+export const SETTINGS_ROUTES: RouteSchema[] = [
+  {
+    type: "both",
+    fullName: "Color Theme",
+    icon: IconSun,
+    name: "Color Theme",
+    path: PathEnum.ColorTheme,
+  },
+  {
+    type: "both",
+    fullName: "Font Theme",
+    icon: IconFont,
+    name: "Font Theme",
+    path: PathEnum.FontTheme,
+  },
+  {
+    type: "both",
+    fullName: "Change Password",
+    icon: IconLock,
+    name: "Change Password",
+    path: PathEnum.ChangePassword,
   },
 ];
