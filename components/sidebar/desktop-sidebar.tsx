@@ -1,36 +1,21 @@
-import IconLogo from "../icons/logo";
-import IconHome from "../icons/icon-home";
-import IconArchive from "../icons/icon-archive";
+import { TagButtonRender } from "../tag-button-render";
 
-import { PathButton } from "../buttons/path-button";
-import { SearchTagButton } from "../buttons/search-tag-button";
+import { RedirectLogo } from "../redirect-logo";
+import { PathEnum } from "@/shared/enums/path-enum";
+import { PathButtonRender } from "../path-button-render";
 
 export function DesktopSidebar() {
   return (
-    <aside className="w-[272px] h-full flex flex-col border-r border-appBorder gap-y-4">
+    <aside className="w-[272px] min-h-full flex flex-col border-r border-appBorder gap-y-4 pb-4">
       <div className="py-6 px-4">
-        <IconLogo className="w-[95px] h-7 text-appForeground" />
+        <RedirectLogo path={PathEnum.Home} />
       </div>
 
       <nav className="w-full h-full flex flex-col flex-1 gap-y-2 px-4">
-        <div className="w-full flex flex-col gap-y-50">
-          <PathButton href="/" label="All Notes" icon={IconHome} />
-          <PathButton
-            href="/archived"
-            label="Archived Notes"
-            icon={IconArchive}
-          />
-        </div>
+        <PathButtonRender />
 
-        <div className="w-full flex flex-col border-t border-border p-100 gap-y-100">
-          <h4 className="font-medium text-appTextTertiary text-sm">Tags</h4>
-
-          <div className="w-full flex flex-col gap-y-50">
-            <SearchTagButton tag="Design" />
-            <SearchTagButton tag="Design 2" />
-            <SearchTagButton tag="Design 3" />
-            <SearchTagButton tag="Design 4" />
-          </div>
+        <div className="w-full flex flex-col border-t border-border gap-y-100">
+          <TagButtonRender label="Tags" />
         </div>
       </nav>
     </aside>

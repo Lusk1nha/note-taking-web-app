@@ -26,7 +26,7 @@ export function SearchTagButton(props: Readonly<ISearchTagButtonProps>) {
     >
       <button
         className={cn(
-          "w-full h-10 flex items-center justify-between px-3 rounded-8 gap-x-50",
+          "w-full h-10 flex items-center justify-between px-3 rounded-8 gap-x-100 overflow-hidden",
           isActive
             ? "bg-appNeutral text-appTextPrimary"
             : "text-appTextNeutral hover:bg-appNeutral hover:text-appTextPrimary",
@@ -34,12 +34,17 @@ export function SearchTagButton(props: Readonly<ISearchTagButtonProps>) {
         )}
         type="button"
       >
-        <div className="flex items-center gap-x-100">
-          <IconTag className={cn("w-5 h-5", isActive && "text-appPrimary")} />
-          <span className="text-sm font-medium">{tag}</span>
-        </div>
+        <IconTag
+          className={cn("min-w-5 min-h-5", isActive && "text-appPrimary")}
+        />
 
-        {isActive && <IconChevronRight className="w-6 h-6" />}
+        <div className="w-full flex justify-between items-center gap-x-100">
+          <p className="text-left text-ellipsis text-sm font-medium flex-1 max-w-[160px] overflow-hidden whitespace-nowrap">
+            {tag}
+          </p>
+
+          {isActive && <IconChevronRight className="min-w-6 min-h-6" />}
+        </div>
       </button>
     </Link>
   );
