@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 import { inter, noto_serif, source_code_pro } from "./fonts";
+import { RoutesProvider } from "@/components/routes-provider";
 
 export const metadata: Metadata = {
   title: "Note Taking Web App",
@@ -18,7 +19,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${noto_serif.variable} ${source_code_pro.variable} ${inter.className}`}
       >
-        {children}
+        <RoutesProvider>{children}</RoutesProvider>
       </body>
     </html>
   );
