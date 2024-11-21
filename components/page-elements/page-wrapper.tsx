@@ -11,7 +11,7 @@ function PageWrapper(props: Readonly<IPageWrapperProps>) {
   return (
     <section
       className={cn(
-        "w-full flex flex-col flex-1 relative p-4 pt-2 lg:pt-0 lg:p-0 gap-200",
+        "w-full flex flex-col flex-1 relative p-4 pt-2 lg:pt-0 lg:p-0",
         className
       )}
     >

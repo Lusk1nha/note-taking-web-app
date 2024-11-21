@@ -14,7 +14,7 @@ import {
 interface IPathButtonProps {
   className?: string;
   href: string;
-  label: string;
+  label?: string;
   icon: MemoExoticComponent<
     ForwardRefExoticComponent<
       Omit<SVGProps<SVGSVGElement>, "ref"> & RefAttributes<SVGSVGElement>
@@ -42,7 +42,7 @@ export function PathButton(props: Readonly<IPathButtonProps>) {
       >
         <div className="flex items-center gap-x-100">
           <Icon className={cn("w-5 h-5", isActive && "text-appPrimary")} />
-          <span className="text-sm font-medium">{label}</span>
+          {label && <span className="text-sm font-medium">{label}</span>}
         </div>
 
         {isActive && <IconChevronRight className="w-6 h-6" />}

@@ -3,7 +3,7 @@
 import { DesktopSidebar } from "./desktop-sidebar";
 import { MobileSidebar } from "./mobile-sidebar";
 
-export function Sidebar() {
+export function GlobalSidebar() {
   return (
     <>
       <div id="mobile-bottom-sidebar" className="lg:hidden">

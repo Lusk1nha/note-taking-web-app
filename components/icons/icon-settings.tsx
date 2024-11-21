@@ -1,5 +1,5 @@
-import * as React from "react"
-import { SVGProps, Ref, forwardRef, memo } from "react"
+import * as React from "react";
+import { SVGProps, Ref, forwardRef, memo } from "react";
 const SvgComponent = (
   props: SVGProps<SVGSVGElement>,
   ref: Ref<SVGSVGElement>
@@ -20,7 +20,7 @@ const SvgComponent = (
       clipRule="evenodd"
     />
   </svg>
-)
-const ForwardRef = forwardRef(SvgComponent)
-const IconSettings = memo(ForwardRef)
-export default IconSettings
+);
+const ForwardRef = forwardRef(SvgComponent);
+const IconSettings = memo(ForwardRef);
+export default IconSettings;
