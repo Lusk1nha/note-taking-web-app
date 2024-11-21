@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${noto_serif.variable} ${source_code_pro.variable} ${inter.className}`}
+        className={`${inter.variable} ${noto_serif.variable} ${source_code_pro.variable}`}
       >
         <RoutesProvider>{children}</RoutesProvider>
       </body>

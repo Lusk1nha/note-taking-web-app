@@ -82,6 +82,7 @@ const config: Config = {
         appBorder: "hsl(var(--app-border))",
         appTag: "hsl(var(--app-tag))",
         appDanger: "hsl(var(--app-danger))",
+        appRadioIcon: "hsl(var(--app-radio-icon))",
       },
       fontFamily: {
         sans: "var(--sans)",
