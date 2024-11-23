@@ -72,12 +72,12 @@ function BeautyItem(props: Readonly<IBeautyItemProps>) {
   return (
     <FormItem>
       <FormControl>
-        <button type="button" className="w-full flex items-center">
+        <div className="w-full flex items-center">
           <RadioGroupItem value={value} id={value} className="peer sr-only" />
           <FormLabel
             htmlFor={value}
             className={cn(
-              "w-full h-[72px] p-200 rounded-12 border border-border flex items-center justify-between",
+              "w-full h-[72px] p-200 rounded-12 border border-border flex items-center justify-between cursor-pointer",
               isChecked && "bg-appNeutral"
             )}
           >
@@ -105,7 +105,7 @@ function BeautyItem(props: Readonly<IBeautyItemProps>) {
               )}
             />
           </FormLabel>
-        </button>
+        </div>
       </FormControl>
     </FormItem>
   );

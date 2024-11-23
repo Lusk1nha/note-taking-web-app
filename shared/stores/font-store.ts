@@ -11,7 +11,7 @@ interface Actions {
   setFont: (font: FontValues) => void;
 }
 
-const localStorage = window.localStorage;
+const localStorage = typeof window !== "undefined" ? window.localStorage : null;
 
 export const useFontStore = create(
   persist<States & Actions>(
@@ -23,7 +23,14 @@ export const useFontStore = create(
     }),
     {
       name: "font-store",
-      storage: createJSONStorage(() => localStorage),
+      storage: createJSONStorage(
+        () =>
+          localStorage ?? {
+            getItem: () => null,
+            setItem: () => null,
+            removeItem: () => null,
+          }
+      ),
     }
   )
 );

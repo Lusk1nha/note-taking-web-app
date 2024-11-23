@@ -20,7 +20,7 @@ export function TagButtonRender(props: Readonly<ITagButtonRenderProps>) {
   const { createArrayByLength } = new MockupHelper();
 
   const tags = useMemo(() => {
-    const response = createArrayByLength(10, () => faker.commerce.product());
+    const response = createArrayByLength(0, () => faker.commerce.product());
     response.sort((a, b) => a.localeCompare(b));
 
     return response;
@@ -32,6 +32,14 @@ export function TagButtonRender(props: Readonly<ITagButtonRenderProps>) {
 
   if (!isMounted) {
     return null;
+  }
+
+  if (tags.length === 0) {
+    return (
+      <p className="py-4 text-appTextPrimary font-medium text-sm text-center">
+        No tags found
+      </p>
+    );
   }
 
   return (

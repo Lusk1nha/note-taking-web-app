@@ -18,12 +18,13 @@ export interface RouteSchema {
   type: "mobile" | "desktop" | "both";
   name: string;
   fullName: string;
-  path: string;
+  path: PathEnum;
   icon: MemoExoticComponent<
     ForwardRefExoticComponent<
       Omit<SVGProps<SVGSVGElement>, "ref"> & RefAttributes<SVGSVGElement>
     >
   >;
+  variants?: PathEnum[];
 }
 
 export const ROUTES: RouteSchema[] = [
@@ -61,6 +62,11 @@ export const ROUTES: RouteSchema[] = [
     fullName: "App Settings",
     path: PathEnum.Settings,
     icon: IconSettings,
+    variants: [
+      PathEnum.ColorTheme,
+      PathEnum.FontTheme,
+      PathEnum.ChangePassword,
+    ],
   },
 ];
 

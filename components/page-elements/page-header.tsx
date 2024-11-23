@@ -1,23 +1,17 @@
 import { cn } from "@/lib/utils";
+import { Children } from "react";
 
 interface IPageHeaderProps {
-  title: string;
+  children: React.ReactNode;
   className?: string;
 }
 
 export function PageHeader(props: Readonly<IPageHeaderProps>) {
-  const { title, className } = props;
+  const { children, className } = props;
 
   return (
-    <header
-      className={cn(
-        "w-full lg:h-20 flex items-center lg:px-8 lg:border-b border-border",
-        className
-      )}
-    >
-      <h1 title={title} className="text-2xl font-bold">
-        {title}
-      </h1>
+    <header className={cn("w-full h-fit flex items-center", className)}>
+      {children}
     </header>
   );
 }

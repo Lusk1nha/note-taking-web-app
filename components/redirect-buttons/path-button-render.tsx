@@ -52,6 +52,7 @@ export function MobilePathButtonRender(
           href={route.path}
           label={route.name}
           icon={route.icon}
+          variants={route.variants}
         />
       ))}
     </>

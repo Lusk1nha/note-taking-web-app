@@ -18,6 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${inter.variable} ${noto_serif.variable} ${source_code_pro.variable}`}
+        suppressHydrationWarning
       >
         <RoutesProvider>{children}</RoutesProvider>
       </body>

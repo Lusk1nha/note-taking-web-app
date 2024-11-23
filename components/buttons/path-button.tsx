@@ -9,6 +9,7 @@ import {
   MemoExoticComponent,
   RefAttributes,
   SVGProps,
+  useMemo,
 } from "react";
 
 interface IPathButtonProps {
@@ -20,13 +21,17 @@ interface IPathButtonProps {
       Omit<SVGProps<SVGSVGElement>, "ref"> & RefAttributes<SVGSVGElement>
     >
   >;
+  variants?: string[];
 }
 
 export function PathButton(props: Readonly<IPathButtonProps>) {
-  const { className, href, label, icon: Icon } = props;
+  const { className, href, label, icon: Icon, variants } = props;
   const pathname = usePathname();
 
-  const isActive = href === pathname;
+  const isActive = useMemo(() => {
+    const isVariant = variants?.find((variant) => variant === pathname);
+    return href === pathname || isVariant;
+  }, [pathname]);
 
   return (
     <Link href={href}>
@@ -52,10 +57,13 @@ export function PathButton(props: Readonly<IPathButtonProps>) {
 }
 
 export function MobilePathButton(props: Readonly<IPathButtonProps>) {
-  const { className, href, label, icon: Icon } = props;
+  const { className, href, label, icon: Icon, variants } = props;
   const pathname = usePathname();
 
-  const isActive = href === pathname;
+  const isActive = useMemo(() => {
+    const isVariant = variants?.find((variant) => variant === pathname);
+    return href === pathname || isVariant;
+  }, [pathname]);
 
   return (
     <div className="max-w-16 md:max-w-none w-full h-full flex items-center justify-center md:border-r border-border last:border-none">
