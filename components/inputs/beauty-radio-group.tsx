@@ -1,3 +1,5 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { FormControl, FormItem, FormLabel } from "../ui/form";
 
@@ -82,7 +84,7 @@ function BeautyItem(props: Readonly<IBeautyItemProps>) {
             )}
           >
             <div className="flex items-center gap-200">
-              <div className="bg-appRadioIcon w-10 h-10 flex items-center justify-center border border-border rounded-12">
+              <div className="bg-appRadioIcon min-w-10 min-h-10 flex items-center justify-center border border-border rounded-12">
                 <Icon className="w-6 h-6" />
               </div>
 
@@ -100,7 +102,7 @@ function BeautyItem(props: Readonly<IBeautyItemProps>) {
 
             <div
               className={cn(
-                "bg-appRadioIcon w-4 h-4 rounded-full border-2 border-border",
+                "bg-appRadioIcon min-w-4 min-h-4 rounded-full border-2 border-border",
                 isChecked && "border-appPrimary border-4"
               )}
             />

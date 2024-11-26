@@ -1,8 +1,8 @@
 import { ColorThemeForm } from "@/components/forms/color-theme-form";
-import { SettingsHeader } from "@/components/settings/settings-header";
-import { SettingsWrapper } from "@/components/settings/settings-wrapper";
+import { SettingsHeader } from "@/app/(dashboard)/settings/_components/settings-header";
+import { SettingsWrapper } from "@/app/(dashboard)/settings/_components/settings-wrapper";
 
-export default function Page() {
+export default function ColorTheme() {
   return (
     <SettingsWrapper>
       <SettingsHeader

@@ -4,7 +4,10 @@ export enum PathEnum {
   Archived = "/archived",
   Tags = "/tags",
   Settings = "/settings",
-  ColorTheme = "/settings/color-theme",
-  FontTheme = "/settings/font-theme",
-  ChangePassword = "/settings/change-password",
+  ColorTheme = "/settings/mode/color-theme",
+  FontTheme = "/settings/mode/font-theme",
+
+  SignIn = "/sign-in",
+  SignUp = "/sign-up",
+  ChangePassword = "/settings/mode/change-password",
 }

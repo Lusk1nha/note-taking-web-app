@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react"
 import { SVGProps, Ref, forwardRef, memo } from "react"
 const SvgComponent = (

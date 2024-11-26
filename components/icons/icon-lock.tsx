@@ -1,5 +1,7 @@
-import * as React from "react"
-import { SVGProps, Ref, forwardRef, memo } from "react"
+"use client";
+
+import * as React from "react";
+import { SVGProps, Ref, forwardRef, memo } from "react";
 const SvgComponent = (
   props: SVGProps<SVGSVGElement>,
   ref: Ref<SVGSVGElement>
@@ -36,7 +38,7 @@ const SvgComponent = (
       d="M11.862 14.203v2.22"
     />
   </svg>
-)
-const ForwardRef = forwardRef(SvgComponent)
-const IconLock = memo(ForwardRef)
-export default IconLock
+);
+const ForwardRef = forwardRef(SvgComponent);
+const IconLock = memo(ForwardRef);
+export default IconLock;
